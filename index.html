@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8Bit Play</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="intro" class="screen">
+    <h1 class="logo">8Bit Play</h1>
+  </div>
+
+  <div id="loader" class="screen hidden">
+    <div class="spinner"></div>
+    <p>Cargando...</p>
+  </div>
+
+  <div id="profile-select" class="screen hidden">
+    <h2>Selecciona tu perfil</h2>
+    <div class="profiles">
+      <div class="profile" onclick="selectProfile('Gael')">Gael</div>
+      <div class="profile" onclick="selectProfile('Jason')">Jason</div>
+      <div class="profile" onclick="selectProfile('Bryan')">Bryan</div>
+      <div class="profile" onclick="selectProfile('Daniel')">Daniel</div>
+    </div>
+  </div>
+
+  <div id="main-menu" class="screen hidden">
+    <aside>
+      <ul>
+        <li onclick="showSection('home')">Inicio</li>
+        <li onclick="showSection('series')">Series</li>
+        <li onclick="showSection('movies')">Películas</li>
+        <li onclick="showSection('trending')">Tendencias</li>
+        <li onclick="showSection('new')">Nuevos lanzamientos</li>
+        <li onclick="goToProfiles()">Selección de perfil</li>
+        <li onclick="goToLogin()">Cerrar sesión</li>
+      </ul>
+    </aside>
+    <main id="content">
+      <div id="home" class="content-section active">
+        <h2>Inicio</h2>
+        <div class="card" onclick="showMedia('serie')">8Bit Crew: La Serie</div>
+        <div class="card" onclick="showMedia('pelicula')">8Bit Crew: La película</div>
+      </div>
+    </main>
+  </div>
+
+  <div id="media-view" class="screen hidden">
+    <button onclick="backToMenu()">Regresar al menú</button>
+    <h2 id="media-title"></h2>
+    <button>Reproducir Capítulo 1</button>
+    <button>Seleccionar capítulo</button>
+    <button>Más contenido de este estilo</button>
+  </div>
+
+  <div id="login" class="screen hidden">
+    <h2>Iniciar sesión</h2>
+    <input type="email" id="email" placeholder="Correo" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="login()">Entrar</button>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
